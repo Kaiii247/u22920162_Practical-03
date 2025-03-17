@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Consult";
+}
+
+<h2>Consult</h2>
+
+<form>
+    <div class="Name">
+        <label for="firstname" class="form-label">First Name</label>
+        <input type="text" class="form-control" id="firstname" required>
+        <div class="invalid-feedback"> Please provide your first name</div>
+    </div>
+
+    <div class="Surname">
+        <label for="lastname" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="lastname" required>
+        <div class="invalid-feedback"> Please provide your surname</div>
+    </div>
+
+    <div class="Email">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" required>
+        <div class="invalid-feedback"> Please provide a valid email address</div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<script>
+    //bootstrap form validation
+    (function () {
+        'use strict';
+        var forms = document.querySelectorAll('form');
+        Array.prototype.slice.call(forms).forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+
+            }, false);
+        }
+</script>
+
+
